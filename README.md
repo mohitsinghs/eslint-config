@@ -1,4 +1,4 @@
-# @mohitsingh/eslint-config
+# eslint-config
 
 [![Build Status](https://travis-ci.com/mohitsinghs/eslint-config.svg)](https://travis-ci.com/mohitsinghs/mohitsinghs/eslint-config)
 [![npm version](https://badge.fury.io/js/%40mohitsingh%2Feslint-config.svg)](https://badge.fury.io/js/%40mohitsingh%2Feslint-config)
