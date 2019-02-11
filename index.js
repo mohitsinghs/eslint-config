@@ -1,7 +1,7 @@
 module.exports = {
   extends: [
     'standard',
-    'plugin:react-recommended',
+    'plugin:react/recommended',
     'prettier',
     'prettier/babel',
     'prettier/react',
