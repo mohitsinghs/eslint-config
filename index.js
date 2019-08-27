@@ -1,24 +1,21 @@
+require('./patch-eslint6')
+
 module.exports = {
   extends: [
-    'standard',
-    'plugin:react/recommended',
-    'plugin:jsx-a11y/recommended',
-    'prettier',
-    'prettier/babel',
-    'prettier/react',
-    'prettier/standard',
+    'eslint-config-standard',
+    'eslint-config-standard-react',
+    'plugin:vue/recommended',
+    'eslint-config-prettier',
+    'eslint-config-prettier/react',
+    'eslint-config-prettier/standard',
+    'eslint-config-prettier/vue'
   ],
-  parser: 'babel-eslint',
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
   plugins: ['react-hooks'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
-    'prettier/prettier': [
-      {
-        singleQuote: true,
-        jsxSingleQuote: true,
-        trailingComma: 'es5',
-        semi: false,
-      },
-    ],
-  },
+    'react-hooks/exhaustive-deps': 'warn'
+  }
 }

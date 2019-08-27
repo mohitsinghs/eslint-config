@@ -4,23 +4,31 @@
   "description": "eslint config for various environments",
   "main": "index.js",
   "engines": {
-    "node": ">=6"
+    "node": ">=8"
   },
   "repository": "mohitsinghs/eslint-config",
-  "keywords": [],
+  "keywords": [
+    "eslint-config"
+  ],
   "author": "Mohit Singh <mohit@mohitsingh.in> (https://mohitsingh.in/)",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint-config-prettier": "^4.0.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-react-hooks": "^1.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "babel-eslint": "^10.0.2",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-config-standard": "^14.0.1",
+    "eslint-config-standard-jsx": "^8.0.1",
+    "eslint-config-standard-react": "^9.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^5.2.3"
+  },
+  "peerDependencies": {
+    "eslint": ">=6.*"
   },
   "publishConfig": {
     "access": "public"
