@@ -4,11 +4,9 @@ module.exports = {
   extends: [
     'eslint-config-standard',
     'eslint-config-standard-react',
-    'plugin:vue/recommended',
     'eslint-config-prettier',
     'eslint-config-prettier/react',
-    'eslint-config-prettier/standard',
-    'eslint-config-prettier/vue'
+    'eslint-config-prettier/standard'
   ],
   parserOptions: {
     parser: 'babel-eslint'

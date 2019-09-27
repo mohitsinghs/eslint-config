@@ -25,3 +25,4 @@ Add the following eslint config in your package.json
   "extends": "@mohitsingh"
 }
 ```
+
