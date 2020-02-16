@@ -1,6 +1,6 @@
 # eslint-config
 
-![](https://github.com/mohitsinghs/eslint-config/workflows/.github/workflows/npmpublish.yml/badge.svg)
+![](https://github.com/mohitsinghs/eslint-config/workflows/.github/workflows/main.yml/badge.svg)
 [![npm version](https://badge.fury.io/js/%40mohitsingh%2Feslint-config.svg)](https://badge.fury.io/js/%40mohitsingh%2Feslint-config)
 [![dependencies Status](https://david-dm.org/mohitsinghs/eslint-config/status.svg)](https://david-dm.org/mohitsinghs/eslint-config)
 [![license MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/mohitsinghs/eslint-config/blob/master/LICENSE)
