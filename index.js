@@ -8,14 +8,14 @@ module.exports = {
     'eslint-config-prettier',
     'eslint-config-prettier/react',
     'eslint-config-prettier/standard',
-    'eslint-config-prettier/vue'
+    'eslint-config-prettier/vue',
   ],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   plugins: ['react-hooks'],
   rules: {
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
-  }
+    'react-hooks/exhaustive-deps': 'warn',
+  },
 }
