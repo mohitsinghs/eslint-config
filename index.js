@@ -1,5 +1,3 @@
-require('./patch-eslint6')
-
 module.exports = {
   extends: [
     'eslint-config-standard',
