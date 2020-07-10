@@ -81,3 +81,4 @@ if (!ConfigArrayFactory.__patched) {
     throw plugin.error || configMissingError(extendName, ctx.filePath)
   }
 }
+
