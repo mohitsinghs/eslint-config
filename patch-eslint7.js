@@ -39,7 +39,12 @@ function configMissingError(configName, importerName) {
 if (!ConfigArrayFactory.__patched) {
   ConfigArrayFactory.__patched = true
   ConfigArrayFactory.prototype._loadPlugins = function (names, ctx) {
-    if (path.dirname(ctx.filePath) !== ctx.pluginBasePath) {
+    // if config is loaded from home
+    if (ctx.matchBasePath === process.env.HOME) {
+      // set config dir as pluginBasePath
+      ctx.pluginBasePath = __dirname
+    } else if (path.dirname(ctx.filePath) !== ctx.pluginBasePath) {
+      // otherwise move to project root and look for plugin
       ctx.pluginBasePath = path.join(path.dirname(ctx.filePath), '../..')
     }
     return names.reduce((map, name) => {
