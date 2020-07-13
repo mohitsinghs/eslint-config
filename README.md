@@ -8,7 +8,7 @@
 
 > I perfer to keep one linter configuation for all my Javascript projects, but [Eslint](https://eslint.org) seems to force otherwise, discouraging global installs and configurations. I ended up patching eslint v7 based on a patch from Microsoft for v6 to make it work globally. With this config, it just works.
 
-This configuation uses [Prettier](https://prettier.io) for formatting and standard for linting. The additons are [react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks) plugin and [babel-eslint](https://github.com/babel/babel-eslint) as parser.
+This configuation uses [Prettier](https://prettier.io) for formatting and [Standard](https://standardjs.com) for linting. The additons are [react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks) plugin and [babel-eslint](https://github.com/babel/babel-eslint) as parser.
 
 ## Usage
 
