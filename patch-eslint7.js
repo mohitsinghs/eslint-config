@@ -1,3 +1,4 @@
+// Adapted from https://github.com/microsoft/rushstack/blob/master/stack/eslint-patch/src/modern-module-resolution.ts
 const path = require('path')
 
 let currentModule = module
@@ -7,7 +8,6 @@ while (
   )
 ) {
   if (!currentModule.parent) {
-    // This was tested with ESLint 6.1.0; other versions may not work
     throw new Error(
       'Failed to patch ESLint because the calling module was not recognized'
     )
@@ -20,70 +20,28 @@ const configArrayFactoryPath = path.join(
   eslintFolder,
   'lib/cli-engine/config-array-factory'
 )
+
 const ConfigArrayFactory = require(configArrayFactoryPath).ConfigArrayFactory
-
-function isFilePath(nameOrPath) {
-  return /^\.{1,2}[/\\]/u.test(nameOrPath) || path.isAbsolute(nameOrPath)
-}
-
-function configMissingError(configName, importerName) {
-  return Object.assign(
-    new Error(`Failed to load config "${configName}" to extend from.`),
-    {
-      messageTemplate: 'extend-config-missing',
-      messageData: { configName, importerName },
-    }
-  )
-}
 
 if (!ConfigArrayFactory.__patched) {
   ConfigArrayFactory.__patched = true
-  ConfigArrayFactory.prototype._loadPlugins = function (names, ctx) {
-    // if config is loaded from home
-    if (ctx.matchBasePath === process.env.HOME) {
-      // set config dir as pluginBasePath
-      ctx.pluginBasePath = __dirname
-    } else if (path.dirname(ctx.filePath) !== ctx.pluginBasePath) {
-      // otherwise move to project root and look for plugin
-      ctx.pluginBasePath = path.join(path.dirname(ctx.filePath), '../..')
-    }
-    return names.reduce((map, name) => {
-      if (isFilePath(name)) {
-        throw new Error('Plugins array cannot includes file paths.')
+
+  const moduleResolverPath = path.join(
+    eslintFolder,
+    'lib/shared/relative-module-resolver'
+  )
+  const ModuleResolver = require(moduleResolverPath)
+  const originalLoadPlugin = ConfigArrayFactory.prototype._loadPlugin
+
+  ConfigArrayFactory.prototype._loadPlugin = function (_, ctx) {
+    const originalResolve = ModuleResolver.resolve
+    try {
+      ModuleResolver.resolve = function (moduleName, _) {
+        return originalResolve.call(this, moduleName, ctx.filePath)
       }
-      const plugin = this._loadPlugin(name, ctx)
-
-      map[plugin.id] = plugin
-
-      return map
-    }, {})
-  }
-  ConfigArrayFactory.prototype._loadExtendedPluginConfig = function (
-    extendName,
-    ctx
-  ) {
-    const slashIndex = extendName.lastIndexOf('/')
-    const pluginName = extendName.slice('plugin:'.length, slashIndex)
-    const configName = extendName.slice(slashIndex + 1)
-
-    if (isFilePath(pluginName)) {
-      throw new Error("'extends' cannot use a file path for plugins.")
+      return originalLoadPlugin.apply(this, arguments)
+    } finally {
+      ModuleResolver.resolve = originalResolve
     }
-
-    ctx.pluginBasePath = path.dirname(ctx.filePath)
-    const plugin = this._loadPlugin(pluginName, ctx)
-    const configData =
-      plugin.definition && plugin.definition.configs[configName]
-
-    if (configData) {
-      return this._normalizeConfigData(configData, {
-        ...ctx,
-        filePath: plugin.filePath || ctx.filePath,
-        name: `${ctx.name} » plugin:${plugin.id}/${configName}`,
-      })
-    }
-
-    throw plugin.error || configMissingError(extendName, ctx.filePath)
   }
 }
-

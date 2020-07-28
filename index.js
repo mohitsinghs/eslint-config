@@ -2,11 +2,11 @@ require('./patch-eslint7')
 
 module.exports = {
   extends: [
-    'eslint-config-standard',
-    'eslint-config-standard-react',
-    'eslint-config-prettier',
-    'eslint-config-prettier/react',
-    'eslint-config-prettier/standard',
+    'standard',
+    'standard-react',
+    'prettier',
+    'prettier/react',
+    'prettier/standard',
   ],
   parserOptions: {
     parser: 'babel-eslint',
@@ -17,4 +17,3 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
   },
 }
-
