@@ -1,6 +1,6 @@
 {
   "name": "@mohitsingh/eslint-config",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "eslint config for various environments",
   "main": "index.js",
   "engines": {
