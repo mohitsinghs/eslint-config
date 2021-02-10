@@ -8,7 +8,7 @@ module.exports = {
     'prettier/standard',
   ],
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
   },
   plugins: ['react-hooks'],
   rules: {
