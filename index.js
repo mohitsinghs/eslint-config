@@ -1,12 +1,5 @@
 module.exports = {
-  extends: [
-    'standard',
-    'standard-jsx',
-    'standard-react',
-    'prettier',
-    'prettier/react',
-    'prettier/standard',
-  ],
+  extends: ['standard', 'standard-jsx', 'standard-react', 'prettier'],
   parserOptions: {
     parser: '@babel/eslint-parser',
   },
