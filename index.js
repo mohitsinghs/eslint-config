@@ -1,11 +1,17 @@
 module.exports = {
-  extends: ['standard', 'standard-jsx', 'standard-react', 'prettier'],
+  extends: [
+    'standard',
+    'standard-jsx',
+    'standard-react',
+    'prettier',
+    'plugin:jest/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   parserOptions: {
     parser: '@babel/eslint-parser',
   },
-  plugins: ['react-hooks'],
   rules: {
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
 }
