@@ -13,18 +13,18 @@
   "author": "Mohit Singh <mohit@mohitsingh.in> (https://mohitsingh.in/)",
   "license": "MIT",
   "dependencies": {
-    "@babel/eslint-parser": "^7.15.7",
+    "@babel/eslint-parser": "^7.16.3",
     "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-config-standard-jsx": "^10.0.0",
     "eslint-config-standard-react": "^11.0.1",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-jest": "^24.4.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.26.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react-hooks": "^4.3.0"
   },
   "peerDependencies": {},
   "publishConfig": {
