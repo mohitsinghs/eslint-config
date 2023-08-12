@@ -4,7 +4,7 @@
   "description": "eslint config for various environments",
   "main": "index.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=16"
   },
   "repository": "mohitsinghs/eslint-config",
   "keywords": [
