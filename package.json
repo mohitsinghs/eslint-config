@@ -13,14 +13,14 @@
   "author": "Mohit Singh <mohit@mohitsingh.in> (https://mohitsingh.in/)",
   "license": "MIT",
   "dependencies": {
-    "@babel/eslint-parser": "^7.22.15",
-    "@next/eslint-plugin-next": "^13.5.6",
-    "eslint-config-prettier": "^9.0.0",
+    "@babel/eslint-parser": "^7.23.3",
+    "@next/eslint-plugin-next": "^14.0.4",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-jsx": "^11.0.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jest": "^27.4.3",
-    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^27.6.0",
+    "eslint-plugin-n": "^16.4.0",
     "eslint-plugin-promise": "^6.1.1"
   },
   "publishConfig": {
